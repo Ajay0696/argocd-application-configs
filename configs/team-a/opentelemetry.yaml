@@ -9,29 +9,6 @@ spec:
     repoURL: https://open-telemetry.github.io/opentelemetry-helm-charts
     chart: opentelemetry-demo
     targetRevision: 0.38.4   # latest chart version
-    helm:
-      values: |
-        components:
-          loadgenerator:
-            enabled: true
-          opentelemetry-collector:
-            enabled: true
-          jaeger:
-            enabled: true
-          prometheus:
-            enabled: true
-          grafana:
-            enabled: true
-          frontendproxy:
-            enabled: true
-        ingress:
-          enabled: false
-        serviceAccount:
-          create: true
-        # Optional: expose demo frontend via NodePort
-        frontend:
-          service:
-            type: NodePort
   destination:
     server: https://kubernetes.default.svc
     namespace: team-a
